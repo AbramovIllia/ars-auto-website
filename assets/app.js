@@ -121,6 +121,21 @@ function renderCarCard(car) {
   `;
 }
 
+function renderFeaturedBento() {
+  const cars = window.CARS.slice(0, 3);
+  const [big, ...rest] = cars;
+  if (!big) return '';
+  const bigCard = renderCarCard(big).replace('class="car-card"', 'class="car-card feature"');
+  return `
+    <div class="bento-grid">
+      ${bigCard}
+      <div class="bento-side">
+        ${rest.map(renderCarCard).join('')}
+      </div>
+    </div>
+  `;
+}
+
 function renderCatalog(filter) {
   const cars = filter ? window.CARS.filter(c => c.fuel.toLowerCase().includes(filter.toLowerCase())) : window.CARS;
   return `<div class="car-grid">${cars.map(renderCarCard).join('')}</div>`;
@@ -331,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('catalog-mount').innerHTML = renderCatalog();
   }
   if (page === 'home') {
-    document.getElementById('featured-cars').innerHTML = window.CARS.slice(0, 4).map(renderCarCard).join('');
+    document.getElementById('featured-cars').innerHTML = renderFeaturedBento();
     document.getElementById('featured-repairs').innerHTML = renderFeaturedRepairs();
   }
   if (page === 'car') {
