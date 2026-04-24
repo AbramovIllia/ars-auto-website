@@ -20,6 +20,7 @@ function renderHeader(active) {
   const navItems = [
     { href: 'index.html', label: 'Главная', key: 'home' },
     { href: 'catalog.html', label: 'Каталог', key: 'catalog' },
+    { href: 'order.html', label: 'Заказ под себя', key: 'order' },
     { href: 'about.html', label: 'Как мы работаем', key: 'about' },
     { href: 'contacts.html', label: 'Контакты', key: 'contacts' },
   ];
@@ -57,6 +58,7 @@ function renderFooter() {
             <h5>Навигация</h5>
             <a href="index.html">Главная</a>
             <a href="catalog.html">Каталог</a>
+            <a href="order.html">Заказ под себя</a>
             <a href="about.html">Как мы работаем</a>
             <a href="contacts.html">Контакты</a>
           </div>
@@ -275,6 +277,49 @@ function setupAnimations() {
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+}
+
+// Order form submit — builds a Telegram deep link with prefilled message
+function submitOrderForm(formId, short = false) {
+  const form = document.getElementById(formId);
+  if (!form) return false;
+  const data = new FormData(form);
+  const get = (k) => (data.get(k) || '').toString().trim();
+
+  const make = get('make');
+  const model = get('model');
+  const budget = get('budget');
+  const year = get('year');
+  const fuel = get('fuel');
+  const body = get('body');
+  const notes = get('notes');
+  const name = get('name');
+
+  if (!make && !model) {
+    alert('Укажите хотя бы марку или модель машины');
+    return false;
+  }
+
+  let msg;
+  if (short) {
+    msg = `Здравствуйте! Хочу заказать машину под себя.\n\n`
+      + `Машина: ${[make, model].filter(Boolean).join(' ')}\n`
+      + (budget ? `Бюджет: ${budget}\n` : '')
+      + (notes ? `Комментарий: ${notes}\n` : '');
+  } else {
+    msg = `Здравствуйте! Хочу заказать машину под себя.\n\n`
+      + (name ? `Меня зовут: ${name}\n` : '')
+      + `Машина: ${[make, model].filter(Boolean).join(' ') || '—'}\n`
+      + (year ? `Год: ${year}\n` : '')
+      + (fuel ? `Топливо: ${fuel}\n` : '')
+      + (body ? `Кузов: ${body}\n` : '')
+      + (budget ? `Бюджет: ${budget}\n` : '')
+      + (notes ? `\nКомментарий: ${notes}\n` : '');
+  }
+
+  const url = `${TG_LINK}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank', 'noopener');
+  return false;
 }
 
 // Bootstrap

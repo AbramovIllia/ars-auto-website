@@ -113,6 +113,46 @@
   </div>
 </section>
 
+<!-- Order custom car -->
+<section class="section">
+  <div class="container">
+    <div class="order-section fade-in">
+      <div>
+        <span class="eyebrow">Заказ под себя</span>
+        <h2 class="serif" style="margin-top:20px;">Не нашли подходящую машину?<br/>Найдём под вас</h2>
+        <p>Если в стоке нет того, что нужно, — расскажите, какую машину вы ищете. Мониторим аукционы по всей Испании, подбираем варианты под ваш бюджет и требования, присылаем подборку в Telegram в течение 48 часов.</p>
+        <ul>
+          <li>Ищем любую марку до 5 лет в любом кузове</li>
+          <li>Под ваш бюджет — от €15 000 до €80 000+</li>
+          <li>Присылаем подборку в Telegram за 48 часов</li>
+          <li>Если машина подошла — проходим весь путь: покупка, ремонт, доставка</li>
+        </ul>
+        <a href="order.html" class="btn btn-lg" style="background:#fff; color:var(--accent);">Подробная форма →</a>
+      </div>
+      <div class="card-inside">
+        <h3 class="serif" style="margin-bottom:8px;">Быстрая заявка</h3>
+        <p style="color:rgba(255,255,255,0.7); font-size:14px; margin-bottom:24px;">Заполните 3 поля — ответим в Telegram за 15 минут</p>
+        <form id="quick-order" onsubmit="return submitOrderForm('quick-order', true)" class="form-grid single">
+          <div class="field">
+            <label>Марка и модель <span class="req">*</span></label>
+            <input type="text" name="make" placeholder="Например: BMW X5, Audi A6, Tesla Model 3"/>
+            <input type="hidden" name="model" value=""/>
+          </div>
+          <div class="field">
+            <label>Бюджет</label>
+            <input type="text" name="budget" placeholder="Например: до €30 000"/>
+          </div>
+          <div class="field">
+            <label>Комментарий</label>
+            <textarea name="notes" rows="2" placeholder="Пожелания по комплектации, пробегу, году..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">✈ Отправить в Telegram</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="section">
   <div class="container" style="max-width:860px;">

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Заказ машины под себя — ARS Auto</title>
+<meta name="description" content="Расскажите, какую машину вы ищете — подберём варианты на аукционах по всей Испании под ваш бюджет и требования. Ответ в Telegram за 48 часов."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body data-page="order">
+
+<section class="order-page-hero">
+  <div class="container">
+    <span class="eyebrow">Заказ под себя</span>
+    <h1 class="serif" style="margin-top:20px;">Найдём машину точно под ваш запрос</h1>
+    <p class="muted" style="font-size:19px; margin-top:20px;">Мониторим до 500 лотов в неделю на всех крупных аукционах Испании. Расскажите, что нужно — в течение 48 часов пришлём подборку в Telegram.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="order-stats">
+    <div class="order-stat">
+      <div class="n">500+</div>
+      <div class="lbl">Лотов в неделю на мониторинге</div>
+    </div>
+    <div class="order-stat">
+      <div class="n">48 ч</div>
+      <div class="lbl">На подбор вариантов под запрос</div>
+    </div>
+    <div class="order-stat">
+      <div class="n">0 €</div>
+      <div class="lbl">Стоимость подбора — бесплатно</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="order-form-card">
+      <span class="eyebrow">Параметры машины</span>
+      <h3 class="serif" style="margin-top:12px;">Расскажите о машине, которую ищете</h3>
+      <p class="muted" style="font-size:14px; margin-bottom:28px;">Чем подробнее опишете — тем точнее подберём варианты. Обязательные поля отмечены звёздочкой.</p>
+
+      <form id="order-form" onsubmit="return submitOrderForm('order-form', false)">
+        <div class="form-grid">
+          <div class="field">
+            <label>Ваше имя</label>
+            <input type="text" name="name" placeholder="Как к вам обращаться"/>
+          </div>
+          <div class="field">
+            <label>Бюджет <span class="req">*</span></label>
+            <input type="text" name="budget" placeholder="Например: до €30 000" required/>
+          </div>
+
+          <div class="field">
+            <label>Марка <span class="req">*</span></label>
+            <input type="text" name="make" placeholder="BMW, Audi, Mercedes..." required/>
+          </div>
+          <div class="field">
+            <label>Модель</label>
+            <input type="text" name="model" placeholder="X5, A6, GLC..."/>
+            <div class="hint">Можно оставить пустым — подберём в рамках марки</div>
+          </div>
+
+          <div class="field">
+            <label>Год выпуска</label>
+            <select name="year">
+              <option value="">Не имеет значения</option>
+              <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+              <option>2023</option>
+              <option>2022</option>
+              <option>2021</option>
+              <option>2020</option>
+            </select>
+            <div class="hint">Мы работаем с машинами не старше 5 лет</div>
+          </div>
+          <div class="field">
+            <label>Кузов</label>
+            <select name="body">
+              <option value="">Любой</option>
+              <option>Седан</option>
+              <option>Универсал</option>
+              <option>Кроссовер / SUV</option>
+              <option>Хэтчбек</option>
+              <option>Купе</option>
+              <option>Кабриолет</option>
+              <option>Минивэн</option>
+            </select>
+          </div>
+
+          <div class="field wide">
+            <label>Тип двигателя</label>
+            <div class="field-row">
+              <div class="radio-pill"><input type="radio" name="fuel" id="fuel-any" value="" checked/><label for="fuel-any">Любой</label></div>
+              <div class="radio-pill"><input type="radio" name="fuel" id="fuel-gas" value="Бензин"/><label for="fuel-gas">Бензин</label></div>
+              <div class="radio-pill"><input type="radio" name="fuel" id="fuel-diesel" value="Дизель"/><label for="fuel-diesel">Дизель</label></div>
+              <div class="radio-pill"><input type="radio" name="fuel" id="fuel-hybrid" value="Гибрид"/><label for="fuel-hybrid">Гибрид</label></div>
+              <div class="radio-pill"><input type="radio" name="fuel" id="fuel-ev" value="Электро"/><label for="fuel-ev">Электро</label></div>
+            </div>
+          </div>
+
+          <div class="field wide">
+            <label>Дополнительные пожелания</label>
+            <textarea name="notes" placeholder="Комплектация, максимальный пробег, цвет, опции, особые требования..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-submit-row" style="margin-top:28px;">
+          <button type="submit" class="btn btn-accent btn-lg">✈ Отправить в Telegram</button>
+          <div class="form-note">
+            При нажатии откроется Telegram с готовым сообщением. Менеджер ответит в течение 15 минут в рабочее время и начнёт подбор в течение 48 часов.
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:860px;">
+    <div style="text-align:center; margin-bottom:40px;">
+      <span class="eyebrow">Как это работает</span>
+      <h2 class="serif" style="margin-top:16px;">Процесс заказа под клиента</h2>
+    </div>
+
+    <div class="process">
+      <div class="process-step">
+        <div class="num">1</div>
+        <h3>Вы оставляете заявку</h3>
+        <p class="muted" style="margin-top:8px; font-size:14px;">Заполняете форму или пишете напрямую в Telegram. Уточняем детали по переписке — без звонков.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">2</div>
+        <h3>Подбираем варианты</h3>
+        <p class="muted" style="margin-top:8px; font-size:14px;">Мониторим Copart, Autorola и другие аукционы. В течение 48 часов присылаем 3–5 подходящих машин с полной информацией.</p>
+      </div>
+      <div class="process-step">
+        <div class="num">3</div>
+        <h3>Покупаем, восстанавливаем, передаём</h3>
+        <p class="muted" style="margin-top:8px; font-size:14px;">Если вариант подошёл — вносите предоплату, выкупаем лот, ремонтируем в нашем цехе, доставляем к вам. Срок — 1,5–2 месяца.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-soft);">
+  <div class="container" style="max-width:820px;">
+    <div style="text-align:center; margin-bottom:32px;">
+      <span class="eyebrow">Вопросы по заказу</span>
+      <h2 class="serif" style="margin-top:16px;">Что важно знать</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>Нужно ли платить за подбор?</summary>
+        <div class="faq-item-body">Нет. Подбор вариантов — бесплатно. Предоплата нужна только когда вы выбрали конкретную машину, которую мы будем выкупать под вас.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Какая предоплата нужна?</summary>
+        <div class="faq-item-body">Обычно 20–30% от стоимости машины на аукционе — она покрывает выкуп и первую часть ремонта. Остальное — после приёмки машины у нас в цехе. Все условия фиксируем в договоре.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Что если я передумаю после выкупа лота?</summary>
+        <div class="faq-item-body">В договоре прописан период охлаждения в 72 часа после выкупа лота. В это время можно отказаться без потерь. После — машина уже в нашем цехе, и условия возврата обсуждаются индивидуально (обычно теряется часть предоплаты на расходы).</div>
+      </details>
+      <details class="faq-item">
+        <summary>Сколько ждать машину?</summary>
+        <div class="faq-item-body">Подбор — до 48 часов. Выкуп и транспортировка с аукциона — 7–14 дней. Ремонт в нашем цехе — 3–6 недель (зависит от объёма работ). Итого от заказа до получения ключей — обычно 1,5–2 месяца.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли приехать и посмотреть машину в процессе?</summary>
+        <div class="faq-item-body">Да. Приглашаем в наш цех в Валенсии в любой момент — покажем, на каком этапе ваша машина. Также присылаем фото и видео на каждом этапе в Telegram.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner fade-in">
+      <h2 class="serif">Есть вопросы? Напишите напрямую</h2>
+      <p>Необязательно заполнять форму — можно сразу написать в Telegram и обсудить ваш запрос в переписке.</p>
+      <a href="https://t.me/abramov_i_s" target="_blank" rel="noopener" class="btn btn-primary btn-lg">✈ Написать в Telegram</a>
+    </div>
+  </div>
+</section>
+
+<script src="assets/cars.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
