@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Каталог машин — ARS Auto</title>
+<meta name="description" content="Каталог машин до 5 лет, восстановленных в нашем цехе в Валенсии. С гарантией, честным прайсом и полным отчётом по ремонту."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body data-page="catalog">
+
+<section class="catalog-head">
+  <div class="container">
+    <span class="eyebrow">Каталог</span>
+    <h1 class="serif" style="margin-top:16px;">Машины в наличии</h1>
+    <p class="muted" style="font-size:17px; max-width:680px; margin-top:12px;">Все машины — не старше 5 лет, с восстановлением в нашем цехе, с гарантией 12 месяцев. По каждой — таймлайн работ и фотоотчёт.</p>
+    <div class="filters">
+      <button class="chip active" onclick="filterCars('')">Все</button>
+      <button class="chip" onclick="filterCars('Бензин')">Бензин</button>
+      <button class="chip" onclick="filterCars('Дизель')">Дизель</button>
+      <button class="chip" onclick="filterCars('Гибрид')">Гибрид</button>
+      <button class="chip" onclick="filterCars('Электро')">Электро</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:32px;">
+  <div class="container">
+    <div id="catalog-mount"></div>
+  </div>
+</section>
+
+<script src="assets/cars.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  function filterCars(filter) {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('catalog-mount').innerHTML = renderCatalog(filter);
+  }
+</script>
+</body>
+</html>
