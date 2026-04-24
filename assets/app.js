@@ -120,18 +120,7 @@ function renderCarCard(car) {
 }
 
 function renderFeaturedBento() {
-  const cars = window.CARS.slice(0, 3);
-  const [big, ...rest] = cars;
-  if (!big) return '';
-  const bigCard = renderCarCard(big).replace('class="car-card"', 'class="car-card feature"');
-  return `
-    <div class="bento-grid">
-      ${bigCard}
-      <div class="bento-side">
-        ${rest.map(renderCarCard).join('')}
-      </div>
-    </div>
-  `;
+  return `<div class="car-grid">${window.CARS.slice(0, 3).map(renderCarCard).join('')}</div>`;
 }
 
 function renderCatalog(filter) {
