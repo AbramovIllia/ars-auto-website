@@ -100,21 +100,19 @@ function renderCarCard(car) {
         <img src="${car.photo}" alt="${car.make} ${car.model}" loading="lazy"/>
       </div>
       <div class="car-card-body">
-        <div class="car-card-title">${car.make} ${car.model}</div>
+        <div class="car-card-title">${car.make} ${car.model}, ${car.year}</div>
         <div class="car-card-trim">${car.trim}</div>
+        <div class="car-card-price">${fmtPrice(car.price)}</div>
         <div class="car-card-specs">
-          <span>${car.year} г.</span>
-          <span>${fmtKm(car.km)}</span>
-          <span>${car.fuel}</span>
-          <span>${car.gearbox}</span>
+          <div class="row"><span>Пробег</span><b>${fmtKm(car.km)}</b></div>
+          <div class="row"><span>Двигатель</span><b>${car.fuel}, ${car.power}</b></div>
+          <div class="row"><span>Коробка</span><b>${car.gearbox}</b></div>
+          <div class="row"><span>Привод</span><b>${car.drive}</b></div>
         </div>
         <div class="car-card-repair">🔧 Что починили: ${car.repairTeaser}</div>
-        <div class="car-card-price-row">
-          <div>
-            <div class="car-card-price">${fmtPrice(car.price)}</div>
-            <div class="car-card-finance">от ${car.finance} €/мес</div>
-          </div>
-          <span class="btn btn-ghost" style="padding:10px 18px; font-size:13px;">Посмотреть →</span>
+        <div class="car-card-actions">
+          <span class="btn btn-primary">Смотреть детали</span>
+          <span class="btn btn-icon" title="Написать менеджеру">✈</span>
         </div>
       </div>
     </a>

@@ -7,33 +7,52 @@
 <meta name="description" content="Покупаем на аукционах современные машины до 5 лет, восстанавливаем в собственном цехе в Валенсии и продаём с гарантией. Русскоязычный менеджер, оплата криптой возможна."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body data-page="home">
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="fade-in">
-        <span class="eyebrow">Валенсия · Испания</span>
-        <h1 style="margin-top:24px;">Машины до <em>5&nbsp;лет</em>,<br/>восстановленные в нашем цехе</h1>
-        <p class="hero-lead">Покупаем на аукционах по всей Испании, приводим в идеальное состояние в собственном цехе в Валенсии и продаём с гарантией 12 месяцев. Честный прайс, русскоязычный менеджер, полный фотоотчёт по ремонту.</p>
-        <div class="hero-cta">
-          <a href="catalog.html" class="btn btn-primary btn-lg">Смотреть каталог</a>
-          <a href="about.html" class="btn btn-ghost btn-lg">Как мы работаем</a>
+<!-- Hero (dark card) -->
+<section class="container">
+  <div class="hero">
+    <div class="hero-card fade-in">
+      <div class="hero-ctas">
+        <div>
+          <span class="eyebrow on-dark">Валенсия · Испания</span>
+          <h1 style="margin-top:24px;">Машины до 5 лет <em>с гарантией</em> восстановлены в нашем цехе</h1>
+          <p class="hero-lead">Покупаем на аукционах по всей Испании, приводим в идеальное состояние в собственном цехе в Валенсии и продаём с гарантией 12 месяцев. Русскоязычный менеджер, честный прайс, PDF-отчёт по ремонту.</p>
+          <div class="hero-cta">
+            <a href="catalog.html" class="btn btn-primary btn-lg">Смотреть каталог</a>
+            <a href="about.html" class="btn btn-outline-dark btn-lg">Как мы работаем</a>
+          </div>
         </div>
-        <span class="hero-promise"><span class="dot"></span> Менеджер отвечает в Telegram за 15 минут</span>
+        <div class="hero-mini-row">
+          <div class="hero-mini">
+            <div class="ico">✓</div>
+            <b>Гарантия 12 месяцев</b>
+            <span>На все работы и запчасти, фиксируется в договоре</span>
+          </div>
+          <div class="hero-mini">
+            <div class="ico">↺</div>
+            <b>Возврат 15 дней</b>
+            <span>Без объяснения причин, деньги возвращаем полностью</span>
+          </div>
+          <div class="hero-mini">
+            <div class="ico">◉</div>
+            <b>PDF-отчёт по ремонту</b>
+            <span>Показываем всё: фото до/после, запчасти, мастера</span>
+          </div>
+        </div>
       </div>
-      <div class="hero-media fade-in">
-        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1400&q=85" alt="Автомобиль в нашем боксе"/>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1400&q=85" alt="Автомобиль в боксе ARS Auto"/>
         <div class="hero-badge">
           <div class="avatar">И</div>
-          <div>
+          <div style="flex:1;">
             <b>Илья · ARS Auto</b>
-            <div class="status">онлайн · Valencia</div>
+            <div class="status">онлайн · ответ за 15 минут</div>
           </div>
-          <a href="https://t.me/abramov_i_s" target="_blank" rel="noopener" class="btn btn-tg" style="padding:8px 14px; font-size:13px; margin-left:auto;">✈ Написать</a>
+          <a href="https://t.me/abramov_i_s" target="_blank" rel="noopener" class="btn btn-primary" style="padding:10px 18px; font-size:13px;">Написать</a>
         </div>
       </div>
     </div>
@@ -41,24 +60,24 @@
 </section>
 
 <!-- Trust strip -->
-<section class="container">
+<section class="container" style="margin-top:8px;">
   <div class="trust-strip">
-    <div class="item">
+    <div class="item fade-in">
       <div class="ico">✓</div>
       <div class="num">12 мес</div>
       <div class="lbl">Гарантия на работы и запчасти</div>
     </div>
-    <div class="item">
+    <div class="item fade-in">
       <div class="ico">↺</div>
       <div class="num">15 дней</div>
       <div class="lbl">Возврат машины без вопросов</div>
     </div>
-    <div class="item">
+    <div class="item fade-in">
       <div class="ico">◉</div>
       <div class="num">100%</div>
       <div class="lbl">Фотоотчёт по каждому ремонту</div>
     </div>
-    <div class="item">
+    <div class="item fade-in">
       <div class="ico">◆</div>
       <div class="num">5 лет</div>
       <div class="lbl">Максимальный возраст машин в стоке</div>
@@ -66,80 +85,145 @@
   </div>
 </section>
 
-<!-- Promise grid: client-oriented value props -->
-<section class="section" style="padding-bottom:40px;">
+<!-- Process (dark cards) -->
+<section class="section">
   <div class="container">
     <div class="section-head fade-in">
       <div>
-        <span class="eyebrow">Почему у нас</span>
-        <h2 class="serif" style="margin-top:16px;">Покупка машины без&nbsp;подвохов</h2>
+        <span class="eyebrow">Как мы работаем</span>
+        <h2>Простой процесс — <br/>открытый результат</h2>
       </div>
-      <p>Мы знаем, почему люди боятся покупать после аукциона — и каждую такую боязнь закрываем конкретным обещанием в договоре.</p>
-    </div>
-    <div class="promise-grid">
-      <div class="promise-card fade-in">
-        <div class="ico">✓</div>
-        <h4>Гарантия 12 месяцев</h4>
-        <p>На кузов, двигатель, коробку и всё, что мы восстанавливали. Фиксируется в договоре.</p>
-      </div>
-      <div class="promise-card fade-in">
-        <div class="ico">↺</div>
-        <h4>Возврат 15 дней</h4>
-        <p>Передумали после получения — забираем машину, возвращаем деньги. Без вопросов.</p>
-      </div>
-      <div class="promise-card fade-in">
-        <div class="ico">◉</div>
-        <h4>PDF-отчёт по ремонту</h4>
-        <p>Показываем, что именно чинили: фото до/после, запчасти, имя мастера. Ничего не прячем.</p>
-      </div>
-      <div class="promise-card fade-in">
-        <div class="ico">✈</div>
-        <h4>Доставка по Испании</h4>
-        <p>Привезём в любой город за 2–4 дня. Оплата картой или криптой через WhiteBIT — легально.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Process -->
-<section class="section">
-  <div class="container">
-    <div class="fade-in" style="max-width:720px; margin-bottom:48px;">
-      <span class="eyebrow">Как мы работаем</span>
-      <h2 class="serif" style="margin-top:16px;">Простой процесс — открытый результат</h2>
+      <p>Три этапа от аукциона до ключей в ваших руках. Каждый документируем, по каждому шагу высылаем фото и видео в Telegram.</p>
     </div>
     <div class="process">
       <div class="process-step fade-in">
         <div class="num">1</div>
-        <h3>Находим машину на аукционе</h3>
-        <p class="muted" style="margin-top:8px; font-size:14px;">Работаем со всеми крупными аукционами Испании. Берём только машины до 5 лет с прозрачной историей. Каждый лот смотрим лично или по подробным фото.</p>
+        <h3>Находим на аукционе</h3>
+        <p>Работаем со всеми крупными аукционами Испании. Берём только машины до 5 лет с прозрачной историей. Каждый лот смотрим лично или по подробным фото.</p>
       </div>
       <div class="process-step fade-in">
         <div class="num">2</div>
-        <h3>Восстанавливаем в нашем цехе</h3>
-        <p class="muted" style="margin-top:8px; font-size:14px;">Собственный цех в Валенсии — кузовные работы, покраска, механика, детейлинг. Используем оригинальные запчасти. Документируем каждый этап.</p>
+        <h3>Восстанавливаем в цехе</h3>
+        <p>Собственный цех в Валенсии — кузовные работы, покраска, механика, детейлинг. Используем оригинальные запчасти. Документируем каждый этап.</p>
       </div>
       <div class="process-step fade-in">
         <div class="num">3</div>
         <h3>Продаём с гарантией</h3>
-        <p class="muted" style="margin-top:8px; font-size:14px;">Прозрачный прайс, отчёт по работам в PDF, гарантия 12 месяцев, возможность возврата 15 дней. Доставка по всей Испании, оплата картой или криптой.</p>
+        <p>Прозрачный прайс, PDF-отчёт по работам, гарантия 12 месяцев, возврат 15 дней. Доставка по всей Испании, оплата картой или криптой.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Featured cars — bento layout -->
+<!-- Promise panel (light panel with dark feature cards — like reference services block) -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="light-panel">
+      <div class="panel-title">Покупка машины <br/>без подвохов и сюрпризов</div>
+      <div class="promise-grid">
+        <div class="promise-card fade-in">
+          <div class="ico">✓</div>
+          <h4>Гарантия 12 месяцев</h4>
+          <p>На кузов, двигатель, коробку и всё, что мы восстанавливали. Фиксируется в договоре.</p>
+        </div>
+        <div class="promise-card fade-in">
+          <div class="ico">↺</div>
+          <h4>Возврат 15 дней</h4>
+          <p>Передумали после получения — забираем машину, возвращаем деньги. Без вопросов.</p>
+        </div>
+        <div class="promise-card fade-in">
+          <div class="ico">◉</div>
+          <h4>PDF-отчёт по ремонту</h4>
+          <p>Показываем, что именно чинили: фото до/после, запчасти, имя мастера.</p>
+        </div>
+        <div class="promise-card fade-in">
+          <div class="ico">✈</div>
+          <h4>Доставка по Испании</h4>
+          <p>Привезём в любой город за 2–4 дня. Оплата картой или криптой через WhiteBIT.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured cars — bento -->
 <section class="section" style="padding-top:0;">
   <div class="container">
     <div class="section-head fade-in">
       <div>
-        <span class="eyebrow">Сток</span>
-        <h2 class="serif" style="margin-top:16px;">Машины в наличии</h2>
-        <p>Три свежих лота в каталоге. По каждой — полный отчёт о ремонте и фото до/после.</p>
+        <span class="eyebrow">Каталог</span>
+        <h2>Машины в наличии</h2>
+        <p>Три свежих лота. По каждой машине — полный PDF-отчёт о ремонте и фото до/после.</p>
       </div>
-      <a href="catalog.html" class="btn btn-ghost btn-lg">Весь каталог →</a>
+      <a href="catalog.html" class="btn btn-dark btn-lg">Весь каталог →</a>
     </div>
     <div id="featured-cars"></div>
+  </div>
+</section>
+
+<!-- Featured repair teaser -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head fade-in">
+      <div>
+        <span class="eyebrow">Фирменная фишка</span>
+        <h2>Показываем, что именно починили</h2>
+        <p>В отличие от конкурентов, мы не скрываем ремонт. По каждой машине — таймлайн работ с фото до/после, список запчастей и имя мастера.</p>
+      </div>
+    </div>
+    <div id="featured-repairs"></div>
+  </div>
+</section>
+
+<!-- Team (dark cards) -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head fade-in">
+      <div>
+        <span class="eyebrow">Команда</span>
+        <h2>Люди, которые вернут машине<br/>идеальный вид</h2>
+        <p>Небольшая команда мастеров с опытом работы в официальных дилерских центрах Испании.</p>
+      </div>
+    </div>
+    <div class="team-grid">
+      <div class="team-card fade-in">
+        <div class="team-photo">
+          <span class="role-tag">Кузов · Покраска</span>
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=85" alt="Алехандро"/>
+        </div>
+        <div class="team-body">
+          <h4>Алехандро Мартинес</h4>
+          <div class="exp">18 лет опыта · ex-Mercedes Valencia</div>
+          <p>Кузовной ремонт любой сложности, профессиональная покраска в камере. За 2025 год восстановил 47 машин.</p>
+          <div class="lang"><span>ES</span><span>EN</span></div>
+        </div>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-photo">
+          <span class="role-tag">Механика · EV</span>
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=85" alt="Карлос"/>
+        </div>
+        <div class="team-body">
+          <h4>Карлос Руис</h4>
+          <div class="exp">12 лет опыта · ex-Tesla Madrid</div>
+          <p>Механика, электроника, диагностика батарей. Сертификация Tesla по работе с высоковольтными системами.</p>
+          <div class="lang"><span>ES</span><span>EN</span></div>
+        </div>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-photo">
+          <span class="role-tag">Менеджер · RU</span>
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=85" alt="Илья"/>
+        </div>
+        <div class="team-body">
+          <h4>Илья Абрамов</h4>
+          <div class="exp">Ваш контакт · основатель ARS Auto</div>
+          <p>Подбор на аукционах, сопровождение сделки, оформление NIE. На связи в Telegram с 9:00 до 21:00.</p>
+          <div class="lang"><span>RU</span><span>EN</span><span>ES</span></div>
+          <a href="https://t.me/abramov_i_s" target="_blank" rel="noopener" class="tg-link">✈ @abramov_i_s</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -149,7 +233,7 @@
     <div class="section-head fade-in">
       <div>
         <span class="eyebrow">Отзывы</span>
-        <h2 class="serif" style="margin-top:16px;">Что говорят клиенты</h2>
+        <h2>Что говорят клиенты</h2>
         <p>Покупатели из Валенсии, Мадрида и Барселоны — про машины, которые мы восстановили.</p>
       </div>
       <div class="review-badge">
@@ -174,7 +258,7 @@
       </div>
       <div class="testimonial fade-in">
         <div class="stars">★★★★★</div>
-        <p class="quote">«Купили BMW X3 для семьи. Понравилось, что PDF-отчёт по ремонту получили сразу — видно, что именно починили и какие запчасти ставили. Доставили в Мадрид за 3 дня.»</p>
+        <p class="quote">«Купили BMW X3 для семьи. PDF-отчёт по ремонту получили сразу — видно, что именно починили и какие запчасти ставили. Доставили в Мадрид за 3 дня.»</p>
         <div class="author">
           <div class="avatar">М</div>
           <div>
@@ -198,93 +282,29 @@
   </div>
 </section>
 
-<!-- Team -->
-<section class="section" style="padding-top:0;">
-  <div class="container">
-    <div class="section-head fade-in">
-      <div>
-        <span class="eyebrow">Команда</span>
-        <h2 class="serif" style="margin-top:16px;">Люди, которые вернут машине идеальный&nbsp;вид</h2>
-        <p>Небольшая, но плотная команда мастеров с опытом работы в официальных дилерских центрах Испании.</p>
-      </div>
-    </div>
-    <div class="team-grid">
-      <div class="team-card fade-in">
-        <div class="team-photo">
-          <span class="role-tag">Кузов · Покраска</span>
-          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=85" alt="Алехандро"/>
-        </div>
-        <div class="team-body">
-          <h4>Алехандро Мартинес</h4>
-          <div class="exp">18 лет опыта · ex-Mercedes Valencia</div>
-          <p>Кузовной ремонт любой сложности, профессиональная покраска в камере. За 2025 год восстановил 47 машин.</p>
-          <div class="lang"><span>ES</span><span>EN</span></div>
-        </div>
-      </div>
-      <div class="team-card fade-in">
-        <div class="team-photo">
-          <span class="role-tag">Механика · EV</span>
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=85" alt="Карлос"/>
-        </div>
-        <div class="team-body">
-          <h4>Карлос Руис</h4>
-          <div class="exp">12 лет опыта · ex-Tesla Madrid</div>
-          <p>Механика, электроника, диагностика батарей электромобилей. Сертификация Tesla по работе с высоковольтными системами.</p>
-          <div class="lang"><span>ES</span><span>EN</span></div>
-        </div>
-      </div>
-      <div class="team-card fade-in">
-        <div class="team-photo">
-          <span class="role-tag">Менеджер · RU</span>
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=85" alt="Илья"/>
-        </div>
-        <div class="team-body">
-          <h4>Илья Абрамов</h4>
-          <div class="exp">Ваш контакт · основатель ARS Auto</div>
-          <p>Подбор машин на аукционах, сопровождение сделки, оформление NIE и документов. На связи в Telegram с 9:00 до 21:00.</p>
-          <div class="lang"><span>RU</span><span>EN</span><span>ES</span></div>
-          <a href="https://t.me/abramov_i_s" target="_blank" rel="noopener" class="tg-link">✈ @abramov_i_s</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Featured repairs -->
-<section class="section" style="background:var(--bg-soft);">
-  <div class="container">
-    <div class="fade-in" style="max-width:720px; margin-bottom:40px;">
-      <span class="eyebrow">Фирменная фишка</span>
-      <h2 class="serif" style="margin-top:16px;">Показываем, что именно починили</h2>
-      <p class="muted" style="margin-top:16px; font-size:17px;">В отличие от конкурентов, мы не скрываем ремонт. На странице каждой машины — таймлайн работ с фото до / после, список запчастей и имя мастера. Это и есть доверие.</p>
-    </div>
-    <div id="featured-repairs"></div>
-  </div>
-</section>
-
 <!-- Order custom car -->
-<section class="section">
+<section class="section" style="padding-top:0;">
   <div class="container">
     <div class="order-section fade-in">
       <div>
         <span class="eyebrow">Заказ под себя</span>
-        <h2 class="serif" style="margin-top:20px;">Не нашли подходящую машину?<br/>Найдём под вас</h2>
-        <p>Если в стоке нет того, что нужно, — расскажите, какую машину вы ищете. Мониторим аукционы по всей Испании, подбираем варианты под ваш бюджет и требования, присылаем подборку в Telegram в течение 48 часов.</p>
+        <h2 style="margin-top:20px;">Не нашли подходящую машину? Найдём под вас</h2>
+        <p>Если в стоке нет того, что нужно, — расскажите, какую машину вы ищете. Мониторим аукционы по всей Испании, присылаем подборку в Telegram за 48 часов.</p>
         <ul>
-          <li>Ищем любую марку до 5 лет в любом кузове</li>
+          <li>Любая марка до 5 лет в любом кузове</li>
           <li>Под ваш бюджет — от €15 000 до €80 000+</li>
-          <li>Присылаем подборку в Telegram за 48 часов</li>
-          <li>Если машина подошла — проходим весь путь: покупка, ремонт, доставка</li>
+          <li>Подборка в Telegram за 48 часов</li>
+          <li>Если подошла — проходим весь путь: покупка, ремонт, доставка</li>
         </ul>
-        <a href="order.html" class="btn btn-lg" style="background:#fff; color:var(--accent);">Подробная форма →</a>
+        <a href="order.html" class="btn btn-dark btn-lg">Подробная форма →</a>
       </div>
       <div class="card-inside">
-        <h3 class="serif" style="margin-bottom:8px;">Быстрая заявка</h3>
-        <p style="color:rgba(255,255,255,0.7); font-size:14px; margin-bottom:24px;">Заполните 3 поля — ответим в Telegram за 15 минут</p>
+        <h3>Быстрая заявка</h3>
+        <p>Заполните 3 поля — ответим в Telegram за 15 минут</p>
         <form id="quick-order" onsubmit="return submitOrderForm('quick-order', true)" class="form-grid single">
           <div class="field">
             <label>Марка и модель <span class="req">*</span></label>
-            <input type="text" name="make" placeholder="Например: BMW X5, Audi A6, Tesla Model 3"/>
+            <input type="text" name="make" placeholder="Например: BMW X5, Tesla Model 3"/>
             <input type="hidden" name="model" value=""/>
           </div>
           <div class="field">
@@ -303,11 +323,11 @@
 </section>
 
 <!-- FAQ -->
-<section class="section">
-  <div class="container" style="max-width:860px;">
+<section class="section" style="padding-top:0;">
+  <div class="container" style="max-width:880px;">
     <div class="fade-in" style="text-align:center; margin-bottom:40px;">
       <span class="eyebrow">Вопросы</span>
-      <h2 class="serif" style="margin-top:16px;">Частые вопросы</h2>
+      <h2 style="margin-top:16px;">Частые вопросы</h2>
     </div>
     <div class="faq">
       <details class="faq-item">
@@ -316,11 +336,11 @@
       </details>
       <details class="faq-item">
         <summary>Откуда берёте машины?</summary>
-        <div class="faq-item-body">Покупаем на аукционах по всей Испании — Copart, Autorola, аукционы лизинговых компаний и прокатных парков. Берём машины до 5 лет с прозрачной историей и небольшими повреждениями (вмятина, царапина, лёгкий удар). Машины после серьёзных ДТП не берём.</div>
+        <div class="faq-item-body">Покупаем на аукционах по всей Испании — Copart, Autorola, аукционы лизинговых компаний и прокатных парков. Берём машины до 5 лет с прозрачной историей и небольшими повреждениями. Машины после серьёзных ДТП не берём.</div>
       </details>
       <details class="faq-item">
         <summary>Можно оплатить криптой?</summary>
-        <div class="faq-item-body">Да, принимаем оплату в USDT, Bitcoin, Ethereum и ещё 300+ монет через WhiteBIT — европейскую криптобиржу с офисом в Литве и официальной регистрацией в Банке Испании. Курс фиксируется на 15–30 минут, нам приходят евро на счёт по обычному банковскому переводу. Всё легально.</div>
+        <div class="faq-item-body">Да, принимаем оплату в USDT, Bitcoin, Ethereum и ещё 300+ монет через WhiteBIT — европейскую криптобиржу с официальной регистрацией в Банке Испании. Курс фиксируется на 15–30 минут, нам приходят евро по обычному банковскому переводу. Всё легально.</div>
       </details>
       <details class="faq-item">
         <summary>А если я живу не в Валенсии?</summary>
@@ -328,7 +348,7 @@
       </details>
       <details class="faq-item">
         <summary>Есть ли рассрочка?</summary>
-        <div class="faq-item-body">Да, работаем с несколькими испанскими банками — Cofidis, Santander Consumer, BBVA. Первый взнос от 20%, срок до 84 месяцев. Ориентир ежемесячного платежа показан на карточке каждой машины. Точный расчёт сделает менеджер за 10 минут в Telegram.</div>
+        <div class="faq-item-body">Да, работаем с несколькими испанскими банками — Cofidis, Santander Consumer, BBVA. Первый взнос от 20%, срок до 84 месяцев. Ориентир ежемесячного платежа показан на карточке каждой машины.</div>
       </details>
       <details class="faq-item">
         <summary>Нужна ли карта резидента?</summary>
@@ -338,14 +358,26 @@
   </div>
 </section>
 
-<!-- CTA banner -->
+<!-- Consultation CTA (blue card, mirrors reference "Нужна консультация?") -->
 <section class="section" style="padding-top:0;">
   <div class="container">
-    <div class="cta-banner fade-in">
-      <span class="eyebrow" style="background:rgba(255,255,255,0.1); color:#fff;">Нашли машину?</span>
-      <h2 class="serif" style="margin-top:20px;">Напишите нам в Telegram</h2>
-      <p>Менеджер ответит за 15 минут (в рабочее время). Расскажем всё про машину, покажем дополнительные фото и видео, обсудим условия оплаты.</p>
-      <a href="https://t.me/abramov_i_s" target="_blank" rel="noopener" class="btn btn-primary btn-lg">✈ Написать в Telegram</a>
+    <div class="consult-cta fade-in">
+      <div>
+        <h2>Нашли машину?<br/>Напишите нам</h2>
+        <p>Менеджер ответит за 15 минут в рабочее время. Расскажем всё про машину, покажем дополнительные фото и видео, обсудим условия оплаты.</p>
+        <div class="tip">
+          <div class="ico">✓</div>
+          <div>
+            <b>Подбор бесплатно</b>
+            <span>Платите только когда выбрали конкретную машину</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a href="https://t.me/abramov_i_s" target="_blank" rel="noopener" class="btn btn-light btn-lg" style="width:100%; padding:18px 24px;">✈ Написать в Telegram</a>
+        <a href="order.html" class="btn btn-outline-dark btn-lg" style="width:100%; padding:18px 24px; margin-top:12px; border-color:rgba(255,255,255,0.4);">Заказать подбор</a>
+        <div style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.75); text-align:center;">Или позвоните: <b style="color:#fff;">+34 600 00 00 00</b></div>
+      </div>
     </div>
   </div>
 </section>
