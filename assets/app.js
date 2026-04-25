@@ -20,8 +20,8 @@ function renderHeader(active) {
   const navItems = [
     { href: 'index.html', label: 'Главная', key: 'home' },
     { href: 'catalog.html', label: 'Каталог', key: 'catalog' },
-    { href: 'order.html', label: 'Заказ под себя', key: 'order' },
-    { href: 'about.html', label: 'Как мы работаем', key: 'about' },
+    { href: 'order.html', label: 'Подбор под клиента', key: 'order' },
+    { href: 'about.html', label: 'О компании', key: 'about' },
     { href: 'contacts.html', label: 'Контакты', key: 'contacts' },
   ];
   return `
@@ -52,14 +52,14 @@ function renderFooter() {
         <div class="footer-grid">
           <div class="footer-col">
             <div class="footer-brand">ARS Auto</div>
-            <p>Покупаем на аукционах, восстанавливаем в своём цехе и продаём машины до 5 лет с гарантией.<br/>Валенсия, Испания.</p>
+            <p>Продажа автомобилей с пробегом из Испании и подбор машин на европейских аукционах. Гарантия 12 месяцев.<br/>Валенсия, Испания.</p>
           </div>
           <div class="footer-col">
             <h5>Навигация</h5>
             <a href="index.html">Главная</a>
             <a href="catalog.html">Каталог</a>
-            <a href="order.html">Заказ под себя</a>
-            <a href="about.html">Как мы работаем</a>
+            <a href="order.html">Подбор под клиента</a>
+            <a href="about.html">О компании</a>
             <a href="contacts.html">Контакты</a>
           </div>
           <div class="footer-col">
@@ -109,7 +109,6 @@ function renderCarCard(car) {
           <div class="row"><span>Коробка</span><b>${car.gearbox}</b></div>
           <div class="row"><span>Привод</span><b>${car.drive}</b></div>
         </div>
-        <div class="car-card-repair">🔧 Что починили: ${car.repairTeaser}</div>
         <div class="car-card-actions">
           <span class="btn btn-primary">Смотреть детали</span>
           <span class="btn btn-icon" title="Написать менеджеру">✈</span>
@@ -126,25 +125,6 @@ function renderFeaturedBento() {
 function renderCatalog(filter) {
   const cars = filter ? window.CARS.filter(c => c.fuel.toLowerCase().includes(filter.toLowerCase())) : window.CARS;
   return `<div class="car-grid">${cars.map(renderCarCard).join('')}</div>`;
-}
-
-function renderFeaturedRepairs() {
-  const pairs = window.CARS.slice(0, 4).map(car => {
-    const first = car.repair.items[0];
-    return `
-      <a href="car.html?slug=${car.slug}" class="repair-pair">
-        <div class="repair-pair-imgs">
-          <div class="repair-pair-img"><span class="label">До</span><img src="${first.before}" alt="До" loading="lazy"/></div>
-          <div class="repair-pair-img"><span class="label">После</span><img src="${first.after}" alt="После" loading="lazy"/></div>
-        </div>
-        <div class="repair-pair-body">
-          <h4>${car.make} ${car.model}</h4>
-          <p>${first.title}</p>
-        </div>
-      </a>
-    `;
-  }).join('');
-  return `<div class="repair-scroll">${pairs}</div>`;
 }
 
 function renderCarDetail(car) {
@@ -195,70 +175,32 @@ function renderCarDetail(car) {
         <div class="item"><div class="lbl">Привод</div><div class="val">${car.drive}</div></div>
       </div>
 
-      <div class="repair-block">
-        <div class="repair-block-head">
-          <div>
-            <span class="eyebrow">Фирменный блок</span>
-            <h2 class="serif" style="margin-top:12px;">Что мы сделали в цехе</h2>
-          </div>
-          <div class="master">
-            <div class="master-avatar">${car.repair.master.initial}</div>
-            <div>
-              <div class="master-name">${car.repair.master.name}</div>
-              <div class="master-role">${car.repair.master.role}</div>
-            </div>
-          </div>
-        </div>
-        <div class="repair-stats" style="margin-top:20px;">
-          <div><b>${car.repair.hours} ч</b>работ</div>
-          <div><b>${fmtPrice(car.repair.partsTotal)}</b>запчасти</div>
-          <div><b>${car.repair.completed}</b>завершено</div>
-        </div>
-        <div class="timeline">
-          ${car.repair.items.map((it, i) => `
-            <div class="timeline-item">
-              <div class="timeline-dot">${i+1}</div>
-              <div class="timeline-content">
-                <h4>${it.title}</h4>
-                <div class="date">${it.date}</div>
-                <p style="margin:0; color:var(--ink-2); font-size:14px;">${it.description}</p>
-                <div class="timeline-imgs">
-                  <div class="img"><span class="label">До</span><img src="${it.before}" alt="До" loading="lazy"/></div>
-                  <div class="img"><span class="label">После</span><img src="${it.after}" alt="После" loading="lazy"/></div>
-                </div>
-                <div class="timeline-parts"><b>Запчасти:</b> ${it.parts}</div>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-
       <section class="section-tight">
         <span class="eyebrow">Комплектация</span>
-        <h2 class="serif" style="margin:12px 0 28px;">Что входит в машину</h2>
+        <h2 style="margin:12px 0 28px;">Что входит в машину</h2>
         <ul class="equipment-list">
           ${car.equipment.map(e => `<li>${e}</li>`).join('')}
         </ul>
       </section>
 
       <section class="section-tight">
-        <span class="eyebrow">Гарантия</span>
-        <h2 class="serif" style="margin:12px 0 28px;">Что получает покупатель</h2>
+        <span class="eyebrow">Гарантия и сервис</span>
+        <h2 style="margin:12px 0 28px;">Что получает покупатель</h2>
         <div class="warranty-grid">
           <div class="warranty-card">
             <div class="ico">🛡️</div>
             <h4>Гарантия 12 месяцев</h4>
-            <p>На все работы, выполненные в нашем цехе, и на установленные запчасти.</p>
+            <p>Официальная гарантия на двигатель, коробку и электронику. Фиксируется в договоре.</p>
           </div>
           <div class="warranty-card">
             <div class="ico">📄</div>
-            <h4>Полный отчёт</h4>
-            <p>История машины, VIN-проверка, детальный отчёт по работам — всё в одном PDF.</p>
+            <h4>Чистая история</h4>
+            <p>VIN-отчёт по пробегу и владельцам, проверка на залог и розыск — до покупки.</p>
           </div>
           <div class="warranty-card">
             <div class="ico">↩️</div>
             <h4>Возврат 15 дней</h4>
-            <p>Если что-то не так — возвращаем деньги без вопросов в течение 15 дней.</p>
+            <p>Если машина не подошла — возвращаем деньги без вопросов в течение 15 дней.</p>
           </div>
         </div>
       </section>
@@ -334,7 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (page === 'home') {
     document.getElementById('featured-cars').innerHTML = renderFeaturedBento();
-    document.getElementById('featured-repairs').innerHTML = renderFeaturedRepairs();
   }
   if (page === 'car') {
     const slug = new URLSearchParams(window.location.search).get('slug');
